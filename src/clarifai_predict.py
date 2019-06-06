@@ -85,6 +85,19 @@ def process_result(search_item, results, aApp, selfConfig):
     json_msg = json.dumps(listRecord)
     return listRecord
 
+def searchImageV2(aConfig, aSearchKey, aStartPosn):
+    max_run = aConfig['MAX_SEARCH']
+    i=0
+    ary_results = []
+    start_posn = aStartPosn
+    for x in range(i, max_run):
+        result = searchImage(aConfig, aSearchKey, start_posn)
+        start_posn += 10
+        ary_results = list(set(ary_results) | set(result))
+
+    json_msg = json.dumps(ary_results)
+    return json_msg
+
 def searchImage(aConfig, aSearchKey, aStartPosn):
     dest_langs=['en', 'ja', 'ko']
     input_src_lang = 'en'
@@ -102,8 +115,9 @@ def searchImage(aConfig, aSearchKey, aStartPosn):
 
         allResult = list(set(allResult) | set(theResult))
 
-        json_msg = json.dumps(allResult)
-    return json_msg
+    return allResult
+    # json_msg = json.dumps(allResult)
+    # return json_msg
 
 
 def predictImage(theConfig, search_item, start_posn):
@@ -144,8 +158,9 @@ def get_model(aApp):
     allModels.append(theDesignModel)
     allModels.append(theGeneralModel)
 
-
     return allModels
+
+
 
 def predictImageLocal(aConfig, aFileFullName):
     theApp = ClarifaiApp(api_key=aConfig['DEFAULT']['CLARIFAI_API_KEY'])
@@ -164,24 +179,28 @@ def predictImageUrl(aConfig, aUrl):
     return json_msg
 
 
+
+def search_images(search_key, aApp):
+    result = aApp.inputs.search_by_annotated_concepts(concept=search_key)
+    pprint.pprint(result)
+    return result
+
+def searchImages(aConfig, search_key):
+    theApp = ClarifaiApp(api_key=aConfig['DEFAULT']['CLARIFAI_API_KEY'])
+    result = search_images(search_key, theApp)
+
+    return result
+
+
+
 if __name__ == "__main__":
 
     theConfig = config.getConfig('../resource/config-prd.json')
 
-    # search_item = input('Please input the search key: ')
-
-    # filePath = 'C:/mysys/topAwards/material/alcohol_images/'
-    # fileFullName = filePath + 'b1.jpg'
-
-    # result = predictImageLocal(theConfig, fileFullName)
-
-    # result = predictImage(theConfig, 'sake', 1)
-
-    # result = searchImage(theConfig, 'sake', 1)
-
     url_link = 'https://i.ytimg.com/vi/DtbZFzWvTIo/maxresdefault.jpg'
-    result = predictImageUrl(theConfig, url_link)
+    result = searchImages(theConfig, 'simple')
     pprint.pprint(result)
 
     print ('Completed!')
+
 
