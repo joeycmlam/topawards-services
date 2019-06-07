@@ -1,0 +1,11 @@
+{
+  "DEFAULT": {
+    "GOOGLE_API_KEY" : "AIzaSyDC4EqcgFcLgGhaYTwlEajVMwFoK_W0hUA",
+    "GOOGLE_CSE_ID" : "007651206429417518186:lvfkdeaxiz0",
+    "CLARIFAI_API_KEY_2" : "58f63802f55d48dda796b79ccf2b4792",
+    "CLARIFAI_API_KEY" : "db91a1a4adb146a39e9ede8a0e99456e"
+  },
+  "MIN_RATING": 0.2,
+  "MAX_SEARCH" : 2,
+  "UPLOAD_FOLDER": "../uploads"
+}

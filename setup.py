@@ -5,12 +5,12 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="topawards_pkg",
-    version="0.0.1",
-    author="Joey Lam",
-    author_email="joey.cm.lam@gmail.com",
-    description="A small image recongiation program",
-    long_description="An image recongiation program for design pattern",
-    long_description_content_type="text/markdown",
+    version="0.0.4",
+    author="Example Author",
+    author_email="author@example.com",
+    description="A small example package",
+    long_description=long_description,
+    long_description_content_type="text/markdown; charset=UTF-8",
     url="https://github.com/joeycmlam/topawards",
     packages=setuptools.find_packages(),
     classifiers=[

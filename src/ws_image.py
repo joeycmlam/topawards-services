@@ -100,5 +100,5 @@ api.add_resource(upload_image, '/uploadimage')
 
 
 if __name__ == '__main__':
-    app.run(port=80)
+    app.run()
 
