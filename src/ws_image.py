@@ -19,7 +19,7 @@ def upload_file():
 class api_root(Resource):
     def get(self):
         print('hello world!')
-        return {'hello': 'world'}
+        return {'hello': 'world version0.0.6'}
 
 class search_image(Resource):
     def get(self, item):
@@ -84,8 +84,8 @@ class get_all_concepts(Resource):
     def get(self):
         theConfig = config.getConfig('../resource/config-prd.json')
         theResult = clarifai_concepts.get_all_concepts(theConfig)
-        json_reult = json.dumps(theResult)
-        return json_reult
+        # json_reult = json.dumps(theResult)
+        return theResult
 
 
 api.add_resource(api_root, '/')

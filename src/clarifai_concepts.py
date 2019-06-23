@@ -9,9 +9,11 @@ def get_all_concepts(Config):
     result = theApp.inputs.get_all()
     imageResult = []
     for image in result:
-        x = { "id": image.input_id, "concepts": image.concepts, "url": image.url}
+        x = dict(id=image.input_id, concepts=image.concepts, url=image.url)
         imageResult.append(x)
-    return imageResult
+
+    # y = {'id': 'xx', 'concepts': '[c1, c2, c3]', 'image': 'http://xxxx.com'}
+    return imageResult;
 
 
 if __name__ == "__main__":
