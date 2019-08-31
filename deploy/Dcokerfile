@@ -1,0 +1,19 @@
+#docker file for pyton
+
+FROM scratch
+
+RUN apt-get install -qy python3
+RUN apt-get install -qy python3-flask
+RUN apt-get install -qy Flask_restful
+RUN apt-get install -qy flask_cors
+RUN apt-get install -qy clarifai
+RUN apt-get install -qy Pillow
+RUN apt-get install -qy googletrans
+RUN apt-get install -qy langdetect
+RUN apt-get install -qy google-api-python-client
+
+
+RUN python3 setup.py sdist bdist_wheel
+
+
+

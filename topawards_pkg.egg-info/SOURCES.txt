@@ -2,13 +2,14 @@ README.md
 setup.py
 src/__init__.py
 src/clarifai-create-input.py
-src/clarifai-search.py
+src/clarifai_concepts.py
 src/clarifai_predict.py
 src/clarifai_predict_demo.py
 src/clarifia-preduct-local-file.py
 src/clsMySysImage.py
 src/config.py
 src/main.py
+src/tool_auth.py
 src/tool_file.py
 src/tool_lang.py
 src/tool_search.py

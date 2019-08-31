@@ -1,10 +1,10 @@
 Metadata-Version: 2.1
 Name: topawards-pkg
-Version: 0.0.4
+Version: 0.0.7
 Summary: A small example package
 Home-page: https://github.com/joeycmlam/topawards
-Author: Example Author
-Author-email: author@example.com
+Author: jlam
+Author-email: joey.cm.lam@gmail.com
 License: UNKNOWN
 Description: # TopAwards Asia Package
         
